@@ -8,7 +8,7 @@ public class LoggingAspect {
 	//one aspect can contain multiple advices
 	
 	
-	@Before("execution(public String getName())")
+	@Before("execution(public String aop.model.Triangle.getName())")
 	public void loggingAdvice() {
 		System.out.println("writing log before method is executed");
 	}
