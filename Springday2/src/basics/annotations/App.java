@@ -5,6 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class App {
 	public static void main(String[] args) {
+		System.out.println("app- main");
 		//System.out.println("hello world");
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 		/*
