@@ -6,6 +6,7 @@ import aop.model.Triangle;
 public class ShapeService {
 	Circle circle;
 	Triangle triangle;
+	
 	public Circle getCircle() {
 		return circle;
 	}
