@@ -2,6 +2,8 @@ package aop.main;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -42,9 +44,15 @@ public class LoggingAspect {
 	 * } }
 	 */
 
-	@After("allCircleMethods()")
+	@AfterReturning("allGetters()")
 	public void adviceAfterCircleMethodsComplete() {
-		System.out.println("a circle method is complete");
+		System.out.println("after a circle method returns");
+	}
+	
+	
+	@AfterThrowing("args(name)")
+	public void adviceAfterExceptionThrown(String name) { //send an email to the developer if an exception is thrown
+		System.out.println("advice after exception is thrown"+name);
 	}
 	
 
@@ -55,10 +63,12 @@ public class LoggingAspect {
 	public void allCircleMethods() {}
 
 	//@Before("args(name)")
-	@Before("methodsStringArgs(name)")
-	public void stringArgsAdvice(String name) {
-		System.out.println("advice for all methods which accept a string as an argument "+name);
-	}
+	/*
+	 * @Before("methodsStringArgs(name)") public void stringArgsAdvice(String name)
+	 * { System.out.
+	 * println("advice for all methods which accept a string as an argument "+name);
+	 * }
+	 */
 
 	@Pointcut("args(name)")
 	public void methodsStringArgs(String name) {}
