@@ -25,30 +25,35 @@ public class LoggingAspect {
 
 	//@Before("execution(* aop..*.get*())")  == 	@Before("allGetters()")
 
-	@Before("allCircleMethods()")
-	public void loggingAdvice(JoinPoint joinPoint) {
-		String methodName = joinPoint.toLongString();
-
-		if(methodName.contains("getDia")) {
-			Circle circle = (Circle) joinPoint.getTarget();
-			System.out.println(circle.getName());
-			System.out.println("writing log for getdia method b4 its executed");
-
-		}
-		else 
-			if(methodName.contains("setName")) {
-				System.out.println("writing log for setName method b4 its executed");
-
-
-			}
-	}
+	/*
+	 * @Before("allCircleMethods()") public void loggingAdvice(JoinPoint joinPoint)
+	 * { String methodName = joinPoint.toLongString();
+	 * 
+	 * if(methodName.contains("getDia")) { Circle circle = (Circle)
+	 * joinPoint.getTarget(); System.out.println(circle.getName());
+	 * System.out.println("writing log for getdia method b4 its executed");
+	 * 
+	 * } else if(methodName.contains("setName")) {
+	 * System.out.println("writing log for setName method b4 its executed");
+	 * 
+	 * 
+	 * } }
+	 */
 
 	@Pointcut("execution(* aop..*.get*())")
 	public void allGetters() {}
 
 	@Pointcut("within(aop.model.Circle)")
 	public void allCircleMethods() {}
+	
+	//@Before("args(name)")
+	@Before("methodsStringArgs(name)")
+	public void stringArgsAdvice(String name) {
+		System.out.println("advice for all methods which accept a string as an argument "+name);
+	}
 
+	@Pointcut("args(name)")
+	public void methodsStringArgs(String name) {}
 
 
 	/*
