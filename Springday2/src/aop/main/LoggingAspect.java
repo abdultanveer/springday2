@@ -48,13 +48,19 @@ public class LoggingAspect {
 	public void adviceAfterCircleMethodsComplete() {
 		System.out.println("after a circle method returns");
 	}
-	
-	
+
+
 	@AfterThrowing("args(name)")
 	public void adviceAfterExceptionThrown(String name) { //send an email to the developer if an exception is thrown
 		System.out.println("advice after exception is thrown"+name);
 	}
-	
+
+	//@AfterReturning(pointcut = "arg(name)" ,returning = "opString" )
+	@AfterReturning(pointcut="args(name)", returning="returnString")
+
+	public void StringArgsMethods(String name,String returnString) {
+		System.out.println("i/p String ="+name +"\n o/p String="+returnString);
+	}
 
 	@Pointcut("execution(* aop..*.get*())")
 	public void allGetters() {}
