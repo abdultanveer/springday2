@@ -8,5 +8,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/springcore"/>
 	<classpathentry kind="lib" path="C:/Users/Admin/git/springday2/Springday2/aspectjrt-1.9.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Admin/Downloads/aspectjtools-1.9.6.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
