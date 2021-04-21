@@ -12,8 +12,8 @@
 	<bean name="loggingAspect" class="aop.main.LoggingAspect"></bean>
 
 	<bean name="circle" class="aop.model.Circle">
-		<property name="name" value="circle"></property>
-	</bean>
+<!-- 		<property name="name" value="circle"></property>
+ -->	</bean>
 	<bean name="triangle" class="aop.model.Triangle">
 		<property name="name" value="equvilateral triangle"></property>
 	</bean>

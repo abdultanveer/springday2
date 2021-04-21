@@ -9,6 +9,8 @@ public class AppMain {
 		ShapeService shapeService = context.getBean("shapeService",ShapeService.class);
 		//System.out.println(shapeService.getTriangle().getName());
 		System.out.println(shapeService.getCircle().getDia());
+		shapeService.getCircle().setName("semi circle");
+
 
 	}
 

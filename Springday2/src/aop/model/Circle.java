@@ -10,7 +10,9 @@ public class Circle {
 	}
 
 	public void setName(String name) {
+		System.out.println("setting name for the circle");
 		this.name = name;
+		
 	}
 	
 	public int getDia() {
