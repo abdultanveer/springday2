@@ -1,6 +1,7 @@
 package aop.main;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -25,6 +26,7 @@ public class LoggingAspect {
 
 	//@Before("execution(* aop..*.get*())")  == 	@Before("allGetters()")
 
+
 	/*
 	 * @Before("allCircleMethods()") public void loggingAdvice(JoinPoint joinPoint)
 	 * { String methodName = joinPoint.toLongString();
@@ -40,12 +42,18 @@ public class LoggingAspect {
 	 * } }
 	 */
 
+	@After("allCircleMethods()")
+	public void adviceAfterCircleMethodsComplete() {
+		System.out.println("a circle method is complete");
+	}
+	
+
 	@Pointcut("execution(* aop..*.get*())")
 	public void allGetters() {}
 
 	@Pointcut("within(aop.model.Circle)")
 	public void allCircleMethods() {}
-	
+
 	//@Before("args(name)")
 	@Before("methodsStringArgs(name)")
 	public void stringArgsAdvice(String name) {
