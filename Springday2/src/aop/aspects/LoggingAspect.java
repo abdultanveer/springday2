@@ -12,7 +12,14 @@ import org.aspectj.lang.annotation.Pointcut;
 
 import aop.model.Circle;
 
+@Aspect
 public class LoggingAspect {
+	
+	public void myLogginAdvice() {
+		System.out.println("my logging advice");
+	}
+	
+	
 	//one aspect can contain multiple advices
 
 	//@Before("execution(* aop.model..*.*(..))")   --- for all methods of all classes present in this package and its subpackages
@@ -80,6 +87,7 @@ public class LoggingAspect {
 	@Pointcut("args(name)")
 	public void methodsStringArgs(String name) {}
 	
+	@Around("@annotation(aop.aspects.Loggable)") //i want myAroundAdvice to be applied to places where @Loggable annotation is present
 	public void myAroundAdvice(ProceedingJoinPoint pjp) {
 		
 		try {

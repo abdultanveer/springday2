@@ -12,7 +12,7 @@
 	<bean name="loggingAspect" class="aop.aspects.LoggingAspect"></bean>
 
 	<bean name="circle" class="aop.model.Circle">
-		<!-- <property name="name" value="semi circle"></property> -->
+		<property name="name" value="semi circle"></property>
 	</bean>
 	<bean name="triangle" class="aop.model.Triangle">
 		<property name="name" value="equvilateral triangle"></property>
@@ -33,14 +33,4 @@
 			</list>
 		</property>
 	</bean>
-	<aop:config>
-		<aop:aspect id="loggingAspect" ref="loggingAspect">
-			<aop:pointcut expression="execution(* aop..*.get*())"
-				id="allGetters"></aop:pointcut>
-			<aop:around method="myAroundAdvice" pointcut-ref="allGetters"></aop:around>
-
-		</aop:aspect>
-
-	</aop:config>
-
 </beans>

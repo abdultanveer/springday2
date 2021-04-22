@@ -7,7 +7,7 @@ public class Circle {
 	
 	public String getName() {
 		//throw new RuntimeException();
-
+		System.out.println("circles getter method");
 		return name;
 		
 	}
