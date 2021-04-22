@@ -1,5 +1,6 @@
-package aop.main;
+package aop.service;
 
+import aop.aspects.Loggable;
 import aop.model.Circle;
 import aop.model.Triangle;
 
@@ -13,6 +14,8 @@ public class ShapeService {
 	public void setCircle(Circle circle) {
 		this.circle = circle;
 	}
+	
+	@Loggable
 	public Triangle getTriangle() {
 		return triangle;
 	}

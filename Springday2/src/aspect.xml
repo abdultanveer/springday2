@@ -9,7 +9,7 @@
 
 	<aop:aspectj-autoproxy/>
 	
-	<bean name="loggingAspect" class="aop.main.LoggingAspect"></bean>
+	<bean name="loggingAspect" class="aop.aspects.LoggingAspect"></bean>
 
 	<bean name="circle" class="aop.model.Circle">
 <!-- 		<property name="name" value="semi circle"></property>
@@ -18,7 +18,7 @@
 		<property name="name" value="equvilateral triangle"></property>
 	</bean>
 
-	<bean name="shapeService" class="aop.main.ShapeService"
+	<bean name="shapeService" class="aop.service.ShapeService"
 		autowire="byName"></bean>
 
 	<bean id="obj" class="aop.xml.A"></bean>

@@ -1,4 +1,4 @@
-package aop.main;
+package aop.aspects;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -81,7 +81,7 @@ public class LoggingAspect {
 	@Pointcut("args(name)")
 	public void methodsStringArgs(String name) {}
 	
-	@Around("allGetters()")
+	@Around("@annotation(aop.aspects.Loggable)") //i want myAroundAdvice to be applied to places where @Loggable annotation is present
 	public void myAroundAdvice(ProceedingJoinPoint pjp) {
 		
 		try {

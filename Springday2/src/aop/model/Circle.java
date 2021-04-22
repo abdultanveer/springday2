@@ -6,9 +6,9 @@ public class Circle {
 	//public Circle() {System.out.println("in circle constructor");}
 	
 	public String getName() {
-		throw new RuntimeException();
+		//throw new RuntimeException();
 
-		//return name;
+		return name;
 		
 	}
 
