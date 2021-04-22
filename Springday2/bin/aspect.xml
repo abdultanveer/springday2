@@ -37,7 +37,7 @@
 		<aop:aspect id="loggingAspect" ref="loggingAspect">
 			<aop:pointcut expression="execution(* aop..*.get*())"
 				id="allGetters"></aop:pointcut>
-			<aop:around method="myAroundAdvice"></aop:around>
+			<aop:around method="myAroundAdvice" pointcut-ref="allGetters"></aop:around>
 
 		</aop:aspect>
 
