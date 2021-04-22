@@ -81,7 +81,7 @@ public class LoggingAspect {
 	@Pointcut("args(name)")
 	public void methodsStringArgs(String name) {}
 	
-	@Around("@annotation(aop.aspects.Loggable)") //i want myAroundAdvice to be applied to places where @Loggable annotation is present
+	@Around("@annotation(aop.aspects.Loggable)") //i want myArou
 	public void myAroundAdvice(ProceedingJoinPoint pjp) {
 		
 		try {
